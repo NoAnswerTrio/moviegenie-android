@@ -1,4 +1,4 @@
-package com.NoAnswerTrio.moviegenie.ui.theme
+package com.noanswertrio.moviegenie.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

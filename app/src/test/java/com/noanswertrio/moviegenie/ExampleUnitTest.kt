@@ -1,4 +1,4 @@
-package com.NoAnswerTrio.moviegenie
+package com.noanswertrio.moviegenie
 
 import org.junit.Test
 
