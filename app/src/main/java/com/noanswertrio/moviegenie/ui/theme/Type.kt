@@ -1,4 +1,4 @@
-package com.NoAnswerTrio.moviegenie.ui.theme
+package com.noanswertrio.moviegenie.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,4 +1,4 @@
-package com.NoAnswerTrio.moviegenie.ui.theme
+package com.noanswertrio.moviegenie.ui.theme
 
 import android.app.Activity
 import android.os.Build

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.NoAnswerTrio.moviegenie'
+    namespace 'com.noanswertrio.moviegenie'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.NoAnswerTrio.moviegenie"
+        applicationId "com.noanswertrio.moviegenie"
         minSdk 24
         targetSdk 33
         versionCode 1
