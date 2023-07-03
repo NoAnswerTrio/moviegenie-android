@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MovieGenie"
 include(":app")
+include(":domain:model")
