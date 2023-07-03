@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlinx-serialization")
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
 }
@@ -44,7 +45,8 @@ dependencies {
 
     //Retorit2
     implementation(libs.retrofit2)
-    implementation(libs.retrofit2.gson)
+    implementation(libs.retrofit2.converter)
+    implementation(libs.kotlinx.serialization)
     implementation(libs.okhttp3)
     implementation(libs.okhttp3.logging)
     //Coroutine
