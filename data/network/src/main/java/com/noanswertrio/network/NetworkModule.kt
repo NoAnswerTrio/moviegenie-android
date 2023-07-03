@@ -1,24 +1,28 @@
 package com.noanswertrio.network
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 import com.noanswertrio.network.Constants.Companion.BASE_URL
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
 
 @Module
 @InstallIn
 object NetworkModule {
-    private val gson : Gson = GsonBuilder()
-        .setLenient()
-        .create()
+    private val json = Json {
+        isLenient = true
+        ignoreUnknownKeys = true
+        coerceInputValues = true
+    }
+
+    val contentType = "application/json".toMediaType()
 
     private fun getLoggingInterceptor(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
@@ -46,7 +50,7 @@ object NetworkModule {
             .baseUrl(BASE_URL)
             .client(okHttpClient)
             .client(provideHttpClient())
-            .addConverterFactory(GsonConverterFactory.create(gson))
+            .addConverterFactory(json.asConverterFactory(contentType))
             .build()
     }
 
