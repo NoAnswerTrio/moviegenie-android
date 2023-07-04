@@ -3,5 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":domain:model"))
+    implementation(libs.javax.inject)
+
 }

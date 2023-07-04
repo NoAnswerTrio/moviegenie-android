@@ -52,6 +52,11 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:signIn"))
+    implementation(project(":feature:signUp"))
+    implementation(project(":domain:user"))
+    implementation(project(":data:user"))
+
     //Hilt
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)

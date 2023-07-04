@@ -3,11 +3,10 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
-
 }
 
 android {
-    namespace = "com.noanswertrio.user"
+    namespace = "com.noanswertrio.login"
     compileSdk = 33
 
     defaultConfig {
@@ -34,23 +33,35 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.3.2"
+    }
 }
 
 dependencies {
 
-    implementation(project(":data:network"))
     implementation(project(":domain:user"))
 
+    //Hilt
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
 
-    implementation(libs.retrofit2)
+    implementation(libs.androidx.core)
+    implementation(platform (libs.kotlin.bom))
+    implementation(platform (libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.grphics)
+    implementation(libs.androidx.compose.material3)
 
-    implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext)
+    androidTestImplementation(libs.androidx.test.espresso)
+}
+
+kapt {
+    correctErrorTypes = true
 }

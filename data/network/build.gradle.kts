@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.kotlinx.serialization)
     implementation(libs.okhttp3)
     implementation(libs.okhttp3.logging)
+
     //Coroutine
     implementation(libs.coroutine)
 

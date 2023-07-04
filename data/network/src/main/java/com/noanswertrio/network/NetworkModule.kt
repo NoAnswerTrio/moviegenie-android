@@ -10,11 +10,12 @@ import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 import com.noanswertrio.network.Constants.Companion.BASE_URL
+import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 
 @Module
-@InstallIn
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
     private val json = Json {
         isLenient = true
