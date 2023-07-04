@@ -14,8 +14,9 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MovieGenie"
 include(":app")
-include(":domain:model")
 include(":data:network")
-include(":data:model")
 include(":domain:user")
 include(":data:user")
+include(":feature:signIn")
+include(":feature:signUp")
+

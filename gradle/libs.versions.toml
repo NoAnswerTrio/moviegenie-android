@@ -15,11 +15,14 @@ okhttp = "4.10.0"
 coroutine = "1.6.4"
 hilt = "2.44"
 hilt-navigation = "1.0.0"
+inject = "1"
 junit = "4.13.2"
 junit-ext = "1.1.5"
 espresso-core = "3.5.1"
 kotlin-Serialization = "1.2.1"
 retrofit-converter = "1.0.0"
+
+
 [libraries]
 
 kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin-bom" }
@@ -40,7 +43,7 @@ okhttp3-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor"
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-navigation" }
-
+javax-inject = {module = "javax.inject:javax.inject", version.ref = "inject"}
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "junit-ext" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
